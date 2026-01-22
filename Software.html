@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Build Tomorrow’s Software Today</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fffbfbc5;
+      color: #24324d;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(30,44,63,0.13),rgba(230,240,255,0.25)),
+                  url('software.jpg') no-repeat center center/cover;
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+    }
+    .hero-content {
+      background: rgba(255,255,255,0.93);
+      border-radius: 14px 14px 0 0;
+      max-width: 500px;
+      margin: 60px 0 0 0;
+      padding: 44px 36px 32px 36px;
+      box-shadow: 0 8px 32px rgba(44,56,88,.13);
+    }
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #24324d;
+      margin-bottom: 14px;
+      letter-spacing: -1px;
+    }
+    .highlight {
+      color: #66bfbf;
+    }
+    .hero p {
+      font-size: 1.09rem;
+      color: #506080;
+      margin-bottom: 22px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+    .hero-buttons button {
+      padding: 11px 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .hero-buttons .start {
+      background: #269895;
+      color: #fff;
+    }
+    .hero-buttons .view {
+      background: #fff;
+      color: #269895;
+      border: 1px solid #269895;
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      margin-top: 38px;
+      margin-bottom: 48px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .section-title h2 {
+      font-size: 1.95rem;
+      color: #28323c;
+      font-weight: 700;
+    }
+    .section-title .highlight {
+      color: #269895;
+    }
+    .section-title p {
+      color: #697890;
+      margin-top: 14px;
+      font-size: 1.06rem;
+    }
+    .services-grid {
+      margin: 36px 0 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 22px 16px 22px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      min-height: 170px;
+    }
+    .service-card h3 {
+      font-size: 1.13rem;
+      font-weight: 600;
+      color: #21303c;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: .98rem;
+      color: #536d84;
+      margin-bottom: 10px;
+    }
+    .service-tags {
+      margin-bottom: 13px;
+    }
+    .service-tag {
+      display: inline-block;
+      background: #e2f7f7;
+      color: #269895;
+      border-radius: 12px;
+      font-size: 0.83em;
+      padding: 3px 13px;
+      margin-right: 6px;
+      margin-bottom: 3px;
+    }
+    .card-link {
+      margin-top: auto;
+      color: #269895;
+      font-weight: 500;
+      font-size: 0.97rem;
+      text-decoration: none;
+      transition: text-decoration 0.2s;
+    }
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    /* TABS SECTION */
+    .tabs-bar {
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+    .tab-btn {
+      background: #e2f2f0;
+      color: #269895;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .tab-btn.active, .tab-btn:focus {
+      background: #269895;
+      color: #fff;
+      outline: none;
+    }
+
+    /* WHY CHOOSE US */
+    .why-section {
+      background: #ffffff;
+      padding: 62px 0 58px 0;
+    }
+    .why-title {
+      text-align: center;
+      font-size: 1.48rem;
+      font-weight: 700;
+    }
+    .why-title span {
+      color: #269895;
+    }
+    .why-desc {
+      color: #466067;
+      font-size: 1.07rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 35px auto;
+    }
+    .why-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+      gap: 26px;
+      max-width: 870px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: #2d2d2d;
+      border-radius: 10px;
+      box-shadow: 0 1px 8px #eaeaea;
+      padding: 24px 15px 24px 15px;
+      text-align: center;
+    }
+    .why-card h4 {
+      color: #ffffff;
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 9px;
+    }
+    .why-card p {
+      color: #ffffff;
+      font-size: .97rem;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      .container { padding: 0 8px; }
+      .hero-content { padding: 16px 8px 18px 12px; }
+      .services-grid, .why-cards { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>
+          Build Tomorrow's <span class="highlight">Software Today</span>
+        </h1>
+        <p>
+          Transform your ideas into powerful digital solutions with cutting-edge technology and innovative development practices.
+        </p>
+        <div class="hero-buttons">
+          <button class="start">Start Project</button>
+          <button class="view">View Work</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our <span class="highlight">Software</span> Services</h2>
+        <p>
+          From concept to deployment, we deliver comprehensive software solutions tailored to your business needs.
+        </p>
+      </div>
+      <div class="services-grid">
+        <!-- Web Applications -->
+        <div class="service-card">
+          <h3>Web Applications</h3>
+          <p>Modern, responsive web applications built with React and cutting-edge technologies for optimal performance.</p>
+          <div class="service-tags">
+            <span class="service-tag">React</span>
+            <span class="service-tag">Node.js</span>
+            <span class="service-tag">TypeScript</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Mobile Apps -->
+        <div class="service-card">
+          <h3>Mobile Apps</h3>
+          <p>Native and cross-platform mobile applications for iOS and Android with seamless user experiences.</p>
+          <div class="service-tags">
+            <span class="service-tag">Kotlin</span>
+            <span class="service-tag">Flutter</span>
+            <span class="service-tag">Swift</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Cloud Solutions -->
+        <div class="service-card">
+          <h3>Cloud Solutions</h3>
+          <p>Scalable cloud infrastructure and microservices architecture for enterprise-grade applications.</p>
+          <div class="service-tags">
+            <span class="service-tag">AWS</span>
+            <span class="service-tag">Azure</span>
+            <span class="service-tag">Kubernetes</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- API Development -->
+        <div class="service-card">
+          <h3>API Development</h3>
+          <p>Robust RESTful and GraphQL APIs with comprehensive documentation and security best practices.</p>
+          <div class="service-tags">
+            <span class="service-tag">GraphQL</span>
+            <span class="service-tag">REST</span>
+            <span class="service-tag">OpenAPI</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Enterprise Systems -->
+        <div class="service-card">
+          <h3>Enterprise Systems</h3>
+          <p>Large-scale enterprise applications with complex business logic and integration capabilities.</p>
+          <div class="service-tags">
+            <span class="service-tag">ERP</span>
+            <span class="service-tag">Microservices</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- DevOps & CI/CD -->
+        <div class="service-card">
+          <h3>DevOps & CI/CD</h3>
+          <p>Automated deployment pipelines, infrastructure as code, and continuous integration practices.</p>
+          <div class="service-tags">
+            <span class="service-tag">Jenkins</span>
+            <span class="service-tag">Terraform</span>
+            <span class="service-tag">GitLab</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS SECTION -->
+  <nav class="tabs-bar">
+    <button class="tab-btn active">Overview</button>
+    <button class="tab-btn">Services</button>
+    <button class="tab-btn">Technologies</button>
+    <button class="tab-btn">Our Team</button>
+    <button class="tab-btn">Portfolio</button>
+  </nav>
+
+  <!-- WHY CHOOSE US SECTION -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-title">Why Choose Our <span>Software Services</span></div>
+      <div class="why-desc">
+        We deliver cutting-edge software solutions that drive innovation, efficiency, and growth for businesses of all sizes.
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <h4>Agile Development</h4>
+          <p>Rapid iteration cycles with transparent collaboration, ensuring timely delivery tailored to changing needs.</p>
+        </div>
+        <div class="why-card">
+          <h4>Scalable Architecture</h4>
+          <p>Future-proof solutions with robust architecture designed to seamlessly fit your business’s needs.</p>
+        </div>
+        <div class="why-card">
+          <h4>Quality Assurance</h4>
+          <p>Comprehensive testing strategies and quality control processes for secure, performant, and reliable applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

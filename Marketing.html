@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amplify Your Brand Impact</title>
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f7f9fa;
+      color: #223040;
+    }
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(50,60,80,0.16),rgba(210,230,255,0.22)), 
+        url('Marketing.jpg') no-repeat center center/cover;
+      min-height: 410px;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+    }
+    .hero-content {
+      background: rgba(255,255,255,0.91);
+      border-radius: 14px 14px 0 0;
+      max-width: 460px;
+      margin: 38px 0 0 0;
+      padding: 40px 32px 32px 36px;
+      box-shadow: 0 8px 32px rgba(68,78,104,.11);
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 750;
+      color: #fff;
+      text-shadow: 0 3px 16px rgba(60,70,80,0.24);
+      margin-bottom: 10px;
+      line-height: 1.12;
+      letter-spacing: -2px;
+    }
+    .hero .highlight {
+      color: #7bcfcf;
+      text-shadow: none;
+    }
+    .hero p {
+      font-size: 1.08rem;
+      color: #2c4862;
+      margin-bottom: 20px;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
+    .hero-buttons button {
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 1px;
+    }
+    .hero-buttons .start {
+      background: #36bdb0;
+      color: #fff;
+      transition: background 0.2s;
+    }
+    .hero-buttons .start:hover {
+      background: #289a95;
+    }
+    .hero-buttons .view {
+      background: #fff;
+      color: #36bdb0;
+      border: 1px solid #36bdb0;
+      transition: background 0.2s;
+    }
+    .hero-buttons .view:hover {
+      background: #e5fbfa;
+    }
+    /* Services Section */
+    .services-section {
+      margin-top: 36px;
+      margin-bottom: 48px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-title h2 {
+      font-size: 1.88rem;
+      color: #2f3c50;
+      font-weight: 700;
+    }
+    .section-title .highlight {
+      color: #36bdb0;
+    }
+    .section-title p {
+      margin-top: 12px;
+      color: #566480;
+    }
+    .services-grid {
+      margin: 38px 0 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px 22px 18px 22px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.045);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card h3 {
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: #1e2837;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: .98rem;
+      color: #4e6275;
+      margin-bottom: 10px;
+    }
+    .service-tags {
+      margin-bottom: 16px;
+    }
+    .service-tag {
+      display: inline-block;
+      background: #eef8f8;
+      color: #35a6a6;
+      border-radius: 12px;
+      font-size: 0.84em;
+      padding: 3px 14px;
+      margin-right: 6px;
+      margin-bottom: 3px;
+    }
+    .card-link {
+      margin-top: auto;
+      color: #36bdb0;
+      font-weight: 500;
+      font-size: 0.97rem;
+      text-decoration: none;
+      transition: text-decoration 0.2s;
+    }
+    .card-link:hover {
+      text-decoration: underline;
+    }
+    /* Tabs Section */
+    .tabs-bar {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .tab-btn {
+      background: #e7f7f6;
+      color: #36bdb0;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .tab-btn.active, .tab-btn:focus {
+      background: #36bdb0;
+      color: #fff;
+      outline: none;
+    }
+    /* Why Choose Us */
+    .why-section {
+      background: #f3faf8;
+      padding: 64px 0 60px 0;
+    }
+    .why-title {
+      text-align: center;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .why-title span {
+      color: #36bdb0;
+    }
+    .why-desc {
+      color: #546579;
+      font-size: 1.07rem;
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 34px auto;
+    }
+    .why-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+      gap: 28px;
+      max-width: 870px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 7px #eaeaea;
+      padding: 30px 18px 26px 18px;
+      text-align: center;
+    }
+    .why-card h4 {
+      color: #283b45;
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin-bottom: 9px;
+    }
+    .why-card p {
+      color: #547785;
+      font-size: .97rem;
+    }
+    /* Responsive */
+    @media (max-width: 650px) {
+      .container { padding: 0 8px; }
+      .hero-content { padding: 16px 8px 18px 12px; }
+      .services-grid,
+      .why-cards { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>
+          Amplify Your <span class="highlight">Brand Impact</span>
+        </h1>
+        <p>
+          Digital campaigns, SEO, PPC, social media & marketing management services for ambitious brands to enhance your audience reach and growth.
+        </p>
+        <div class="hero-buttons">
+          <button class="start">Start Project</button>
+          <button class="view">View Campaigns</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our <span class="highlight">Marketing</span> Services</h2>
+        <p>
+          Comprehensive marketing solutions that drive measurable results and sustainable growth for your business.
+        </p>
+      </div>
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card">
+          <h3>Digital Campaign Management</h3>
+          <p>
+            End-to-end campaign deployment, execution, and optimization across all digital channels.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Multi-channel</span>
+            <span class="service-tag">Ad Tracking</span>
+            <span class="service-tag">Analytics</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Service Card 2 -->
+        <div class="service-card">
+          <h3>SEO &amp; PPC Optimization</h3>
+          <p>
+            Comprehensive search engine optimization and pay-per-click advertising management.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">SEO Audit</span>
+            <span class="service-tag">Google Ads</span>
+            <span class="service-tag">Keywords</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Service Card 3 -->
+        <div class="service-card">
+          <h3>Social Media Management</h3>
+          <p>
+            Strategic social media presence across all platforms with engaging content and community management.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Content Creation</span>
+            <span class="service-tag">Community</span>
+            <span class="service-tag">Influencers</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Service Card 4 -->
+        <div class="service-card">
+          <h3>Brand Development</h3>
+          <p>
+            Complete brand identity creation and management to establish strong market recognition.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Brand Strategy</span>
+            <span class="service-tag">Logo Design</span>
+            <span class="service-tag">Guidelines</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Service Card 5 -->
+        <div class="service-card">
+          <h3>Content Strategy</h3>
+          <p>
+            Strategic content planning, creation, and distribution across all marketing channels.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Content Calendar</span>
+            <span class="service-tag">Blog Writing</span>
+            <span class="service-tag">SEO</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+        <!-- Service Card 6 -->
+        <div class="service-card">
+          <h3>Email Marketing</h3>
+          <p>
+            Targeted email campaigns with personalization, automation, and advanced segmentation strategies.
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">Automation</span>
+            <span class="service-tag">Segmentation</span>
+            <span class="service-tag">Personalization</span>
+          </div>
+          <a href="#" class="card-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS SECTION -->
+  <nav class="tabs-bar">
+    <button class="tab-btn active">Overview</button>
+    <button class="tab-btn">Services</button>
+    <button class="tab-btn">Methodology</button>
+    <button class="tab-btn">Our Team</button>
+    <button class="tab-btn">Results</button>
+  </nav>
+
+  <!-- WHY CHOOSE US SECTION -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-title">Why Choose <span>Our Marketing Services</span></div>
+      <div class="why-desc">
+        We deliver comprehensive marketing solutions that drive measurable results and sustainable growth for your business.
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <h4>Data-Driven Approach</h4>
+          <p>Comprehensive analytics and market research to ensure optimal performance and ROI.</p>
+        </div>
+        <div class="why-card">
+          <h4>Integrated Solutions</h4>
+          <p>Seamless coordination across all channels for maximum impact and brand consistency.</p>
+        </div>
+        <div class="why-card">
+          <h4>Scalable Growth</h4>
+          <p>Flexible, future-ready marketing strategies built for startups to enterprise-level organizations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
